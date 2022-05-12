@@ -7,7 +7,7 @@ const Banner2 = () => {
         <div>
             <div className="hero min-h-screen lg:container mx-auto">
                 <div className="hero-content flex-col lg:flex-row ">
-                    <img className="max-w-sm rounded-lg shadow-2xl" src={treatment} alt
+                    <img className="lg:max-w-sm min-w-sm rounded-lg shadow-2xl" src={treatment} alt
                         ='' />
                     <div>
                         <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
