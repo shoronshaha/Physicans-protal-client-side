@@ -1,13 +1,13 @@
 import React from 'react';
-import chair from '../../../assets/images/chair.png'
+import treatment from '../../../assets/images/treatment.png'
 import PrimaryButton from '../../Shared/Button/PrimaryButton';
 
-const Banner = () => {
+const Banner2 = () => {
     return (
         <div>
             <div className="hero min-h-screen lg:container mx-auto">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img className="max-w-sm rounded-lg shadow-2xl" src={chair} alt
+                <div className="hero-content flex-col lg:flex-row ">
+                    <img className="max-w-sm rounded-lg shadow-2xl" src={treatment} alt
                         ='' />
                     <div>
                         <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
@@ -20,4 +20,4 @@ const Banner = () => {
     );
 };
 
-export default Banner;
+export default Banner2;
