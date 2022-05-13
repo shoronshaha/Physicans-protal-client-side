@@ -8,6 +8,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
         event.preventDefault();
         const slot = event.target.slot.value;
         console.log(_id, name, slot);
+        // to close the modal
         setTreatment(null);
     }
 
@@ -17,7 +18,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
                     <label for="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2 ">✕</label>
-                    <h3 className="font-bold text-lg text-secondary">Booking for: {name}</h3>
+                    <h3 className="font-bold text-lg text-secondary text-center">Booking for: {name}</h3>
                     <form onSubmit={handleBooking} className='grid gird-cols-1 gap-3 justify-items-center my-4'>
                         <input disabled value={format(date, 'PP')} type="text" placeholder="Type here" className="input w-full max-w-xs input-bordered" />
                         <select name="slot" className="select select-bordered w-full max-w-xs">
