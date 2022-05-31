@@ -12,7 +12,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     const handleBooking = event => {
         event.preventDefault();
         const slot = event.target.slot.value;
-        console.log(_id, name, slot);
 
         const booking = {
             treatmentId: _id,
