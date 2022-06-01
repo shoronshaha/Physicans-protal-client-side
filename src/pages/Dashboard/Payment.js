@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
 import CheckoutForm from './CheackoutForm';
 
-
+const stripePromise = loadStripe('pk_test_51L1oZrGxEy7U4yHinmJxGs2vkFA5gWemCmQ4FbbKdNTi7czIxSUXlJ7Pn4fzh1OGeilq8aUMGYjd4oMvDcWBVD8s00RYXcqaAj')
 
 const Payment = () => {
     const { id } = useParams();
@@ -36,9 +36,9 @@ const Payment = () => {
             </div>
             <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
                 <div className="card-body">
-                    {/* <Elements stripe={stripePromise}>
+                    <Elements stripe={stripePromise}>
                         <CheckoutForm appointment={appointment} />
-                    </Elements> */}
+                    </Elements>
                 </div>
             </div>
         </div>

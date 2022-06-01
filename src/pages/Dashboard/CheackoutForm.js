@@ -1,5 +1,5 @@
-import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useState, useEffect } from 'react';
+import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 
 const CheckoutForm = ({ appointment }) => {
     const stripe = useStripe();
@@ -13,7 +13,8 @@ const CheckoutForm = ({ appointment }) => {
     const { _id, price, patient, patientName } = appointment;
 
     useEffect(() => {
-        fetch('https://localhost:5000/create-payment-intent', {
+        fetch('http://localhost:5000/create-payment-intent', {
+
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -51,7 +52,7 @@ const CheckoutForm = ({ appointment }) => {
         setCardError(error?.message || '')
         setSuccess('');
         setProcessing(true);
-        // confirm card payment
+        // // confirm card payment
         const { paymentIntent, error: intentError } = await stripe.confirmCardPayment(
             clientSecret,
             {
@@ -80,7 +81,7 @@ const CheckoutForm = ({ appointment }) => {
                 appointment: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://localhost:5000/booking/${_id}`, {
+            fetch(`http://localhost:5000/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
@@ -114,7 +115,8 @@ const CheckoutForm = ({ appointment }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret || success}>
+                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret}>
+                    {/* || success  */}
                     Pay
                 </button>
             </form>
