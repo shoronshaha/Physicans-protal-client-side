@@ -4,7 +4,7 @@ const useAdmin = user => {
     const [admin, setAdmin] = useState(false);
     const [adminLoading, setAdminLoading] = useState(true);
     useEffect(() => {
-        const email = user?.email;
+        const email = user.email
         if (email) {
             fetch(`https://desolate-sands-56371.herokuapp.com/admin/${email}`, {
                 method: 'GET',
